@@ -12,6 +12,7 @@
 
   <body>
     <nav>
+       <%= link_to "Batch Movies", movies_movies_batch_path %>
       <% if current_user %>
         <% if current_user.admin? %>
           <%= link_to "Create User", new_user_path %>

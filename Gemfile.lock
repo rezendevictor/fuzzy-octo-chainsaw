@@ -100,9 +100,9 @@ GEM
     debug (1.9.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    diff-lcs (1.5.1)
     drb (2.2.0)
       ruby2_keywords
-    error_highlight (0.6.0)
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -143,7 +143,7 @@ GEM
     net-smtp (0.4.0.1)
       net-protocol
     nio4r (2.7.0)
-    nokogiri (1.16.2-x86_64-linux)
+    nokogiri (1.16.2-x64-mingw-ucrt)
       racc (~> 1.4)
     psych (5.1.2)
       stringio
@@ -191,10 +191,24 @@ GEM
     rake (13.1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
+    redis (3.3.5)
     regexp_parser (2.9.0)
     reline (0.4.2)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.17.0)
@@ -202,6 +216,10 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sidekiq (4.1.2)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      redis (~> 3.2, >= 3.2.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -209,7 +227,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.2-x86_64-linux)
+    sqlite3 (1.7.2-x64-mingw-ucrt)
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.0)
@@ -221,6 +239,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2024.1)
+      tzinfo (>= 1.0.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -236,7 +256,7 @@ GEM
     zeitwerk (2.6.13)
 
 PLATFORMS
-  x86_64-linux
+  x64-mingw-ucrt
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -248,7 +268,10 @@ DEPENDENCIES
   jbuilder
   puma (>= 5.0)
   rails (~> 7.1.3)
+  redis
+  rspec
   selenium-webdriver
+  sidekiq
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

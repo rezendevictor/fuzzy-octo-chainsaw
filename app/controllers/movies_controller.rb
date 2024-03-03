@@ -22,8 +22,22 @@ class MoviesController < ApplicationController
     end
   end
 
-  private
+  def upload_json
+    uploaded_file = params[:json_file]
+    if uploaded_file.present?
+      movie_data = JSON.parse(uploaded_file.read)
+      MyFirstJobWorker.perform_async(movie_data)
+      redirect_to movies_path
+    else
+      print('Did not Work\n')
+    end
+  end
 
+  def movies_batch
+  end
+
+
+  private
   def movie_params
     params.require(:movie).permit(:title, :director)
   end

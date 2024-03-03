@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :new, :create]
   resources :user_movies, only: [:create, :update]
 
+  get 'movies/movies-batch'
+  post 'movies/upload_json'
   get '/login', to: 'sessions#new'
   delete '/logout', to: 'sessions#destroy'
 
