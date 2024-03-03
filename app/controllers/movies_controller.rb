@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
       CreateMoviesWorker.perform_async(movie_data)
       redirect_to movies_path
     else
-      print('Did not Work\n')
+      puts 'Did not Work\n'
     end
   end
 
