@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
     uploaded_file = params[:json_file]
     if uploaded_file.present?
       movie_data = JSON.parse(uploaded_file.read)
-      MyFirstJobWorker.perform_async(movie_data)
+      CreateMoviesWorker.perform_async(movie_data)
       redirect_to movies_path
     else
       print('Did not Work\n')

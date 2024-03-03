@@ -1,4 +1,4 @@
-class MyFirstJobWorker
+class CreateMoviesWorker
   include Sidekiq::Worker
   def perform(movie_data)
     movie_data.each do |element|
