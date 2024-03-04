@@ -31,9 +31,8 @@ This project has 3 diffent disctinct 3 parts:
   
   3 - Run the Ruby on Rails application
   
-    ```bash
         rails server
-    ```
+    
 
 ## How to Batch Add New Movies
   I took a decision to add a button to the top of the page to add new movies using a .json file. You can either login and click on the "Batch Movies" on the top left of the page or access it directly using "http://localhost:3000/movies/movies-batch".
