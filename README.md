@@ -19,16 +19,16 @@ This project has 3 diffent disctinct 3 parts:
     This is the Redis component necessary to run Sideqik. To execute it you need the docker app in your local machine.
     If you already have Docker installed, you can just:
     
-    ```bash
+  
       docker-compose up -d
-    ```
+    
    2 - Sideqik
     This is the Redis component necessary to run the tasks in second plane. To execute it you need the Sideqik gem in your local machine.
     If you already have Sideqik installed, you can just:
       
-    ```bash
+    
         bundle exec sidekiq
-    ```
+  
   3 - Run the Ruby on Rails application
   
     ```bash
